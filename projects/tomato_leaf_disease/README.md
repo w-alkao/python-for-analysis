@@ -2,6 +2,8 @@
 
 ## 📌 Project Overview
 
+![tinyml](images/mlvstinyml.png)
+
 This project focuses on developing and optimizing deep learning models for tomato leaf disease classification, with the goal of deploying lightweight models on resource-constrained devices. Three Convolutional Neural Network (CNN) architectures were trained and evaluated for recognizing tomato leaf diseases: **AlexNet, MobileNet, and DenseNet**.
 
 After training the models, several model compression techniques were applied to reduce their size and computational requirements while maintaining as much classification performance as possible. The optimization process includes: **Pruning, Weight clustering, and Quantization**
@@ -23,27 +25,39 @@ The main objectives of the project are to:
 
 The models are trained to distinguish between different tomato leaf conditions, including: **Healthy leaves, Bacterial Spot, Early Blight, and Other disease classes** included in the dataset
 
-The classification pipeline processes tomato leaf images and predicts the corresponding disease category.
+![images](images/dataset.png)
+
+The classification pipeline processes tomato leaf images and predicts the corresponding disease category. The dataset consist of **10.000 images** and were split in three category: train, validation and test.
+
+
 
 #### 🧠 Deep Learning Models
 
 Three CNN architectures are investigated:
 
-AlexNet
+1. AlexNet
 
 AlexNet serves as a baseline CNN architecture for evaluating image classification performance and the effect of subsequent compression techniques.
 
-MobileNet
+![images](images/alexnet_architecture.png)
+
+2. MobileNet
 
 MobileNet is designed specifically for computationally constrained environments and provides a lightweight architecture suitable for edge and mobile applications.
 
-DenseNet
+![images](images/mobilenet_architecture.png)
 
-DenseNet uses dense connections between layers to improve feature propagation and parameter efficiency while maintaining strong image classification capabilities.
+3. DenseNet
+
+DenseNet uses dense connections between layers to improve feature propagation and parameter efficiency while maintaining strong image classification capabilities. 
+
+![images](images/densenet_architecture.png)
 
 ### ⚙️ Model Optimization
 
 After training the models, different compression techniques are applied to reduce model size.
+
+![images](images/compression.png)
 
 1. Pruning
 
@@ -58,6 +72,8 @@ Remove / Zero Weights
       ↓
 Pruned Model
 ```
+![images](images/pruning.png)
+
 The objective is to reduce the number of effective parameters while limiting the impact on classification accuracy.
 
 2. Weight Clustering
@@ -73,6 +89,8 @@ Reduced Number of Unique Values
       ↓
 Compressed Model
 ```
+![images](images/clustering.png)
+
 This can reduce the storage requirements of the model and make it more suitable for deployment on constrained hardware.
 
 3. Quantization
@@ -89,6 +107,8 @@ Lower-Precision Model
         ↓
 Reduced Memory Footprint
 ```
+![images](images/quantization.png)
+
 The goal is to reduce model size and computational requirements while maintaining acceptable predictive performance.
 
 #### 📊 Model Evaluation
@@ -150,15 +170,7 @@ The project compares the original and compressed models based on both classifica
 
 The analysis focuses on determining how much model compression can be achieved while maintaining an acceptable level of disease classification performance.
 
-| Model     | Compression  | Model Size | Accuracy | Performance Change |
-| --------- | ------------ | ---------: | -------: | ------------------ |
-| AlexNet   | Baseline     |          — |        — | —                  |
-| AlexNet   | Pruning      |          — |        — | —                  |
-| AlexNet   | Clustering   |          — |        — | —                  |
-| AlexNet   | Quantization |          — |        — | —                  |
-| MobileNet | Baseline     |          — |        — | —                  |
-| DenseNet  | Baseline     |          — |        — | —                  |
-
+![images](alexnet_result.png)
 
 #### 🌾 Application: Precision Agriculture
 
