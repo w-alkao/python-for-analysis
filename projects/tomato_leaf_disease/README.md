@@ -170,7 +170,7 @@ The project compares the original and compressed models based on both classifica
 
 The analysis focuses on determining how much model compression can be achieved while maintaining an acceptable level of disease classification performance.
 
-![images](alexnet_result.png)
+![images](images/alexnet_result.png)
 
 #### 🌾 Application: Precision Agriculture
 
